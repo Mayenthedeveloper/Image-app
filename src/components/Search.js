@@ -1,9 +1,16 @@
 import React from "react";
 
-function Search() {
+function Search({ inputVal, setInputVal, handleSearch }) {
   return (
-    <form action="">
-      <input type="text" />
+    <form onSubmit={handleSearch}>
+      <input
+        type="text"
+        placeholder="Search for an image"
+        autoFocus
+        value={inputVal}
+        onChange={(e) => setInputVal(e.target.value)}
+      />
+
       <button type="submit">Search</button>
     </form>
   );
