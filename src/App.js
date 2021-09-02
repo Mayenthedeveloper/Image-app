@@ -10,13 +10,13 @@ function App() {
   const [search, setSearch] = useState("");
   const [inputVal, setInputVal] = useState("");
 
-  useEffect(() => {
-    fetch(
-      `https://pixabay.com/api/?key=${API_KEY}&q=${search}&image_type=photo&per_page=9&page=${currentPage}&pretty=true`
-    )
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch(
+  //     `https://pixabay.com/api/?key=${API_KEY}&q=${search}&image_type=photo&per_page=9&page=${currentPage}&pretty=true`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => setImages(data.hits));
+  // }, []);
 
   return (
     <div className="App">
