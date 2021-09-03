@@ -4,7 +4,7 @@ import Search from "./Search";
 import Card from "./Card";
 
 function Hero(props) {
-  const { inputVal, setInputVal, handleSearch } = props;
+  const { inputVal, setInputVal, handleSearch, images } = props;
 
   return (
     <section className="hero">
@@ -14,7 +14,7 @@ function Hero(props) {
         handleSearch={handleSearch}
       />
       <Container>
-        <Card />
+        <Card images={images} />
         <div className="btnContainer">
           <button>Previous</button>
           <button>Next</button>
