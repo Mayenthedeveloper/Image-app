@@ -16,13 +16,23 @@ function App() {
     setInputVal("");
   };
 
+  const newImages = (direction) => {
+    if (direction === "next") {
+      setCurrentPage((prevCurrent) => prevCurrent + 1);
+    } else if (direction === "prrevious" && currentPage !== 1) {
+      setCurrentPage((prevCurrent) => prevCurrent - 1);
+    }
+  };
+
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     fetch(
       `https://pixabay.com/api/?key=${API_KEY}&q=${search}&image_type=photo&per_page=9&page=${currentPage}&pretty=true`
     )
       .then((res) => res.json())
       .then((data) => setImages(data.hits));
-  }, [search]);
+  }, [search, currentPage]);
 
   return (
     <div className="App">
@@ -31,6 +41,7 @@ function App() {
         inputVal={inputVal}
         setInputVal={setInputVal}
         handleSearch={handleSearch}
+        newImages={newImages}
       />
     </div>
   );
