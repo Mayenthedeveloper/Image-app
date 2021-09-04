@@ -22,7 +22,7 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => setImages(data.hits));
-  }, []);
+  }, [search]);
 
   return (
     <div className="App">
